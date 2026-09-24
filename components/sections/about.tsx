@@ -123,7 +123,7 @@ export default function About() {
       {/* Bottom Wave divider transitioning to the next section */}
       <div className="w-full overflow-hidden leading-none pointer-events-none mt-8 lg:mt-12">
         <svg
-          className="w-full h-16 sm:h-24 lg:h-32 block text-[#FEF3E7]"
+          className="w-full h-16 sm:h-24 lg:h-32 block text-[#EFECFD]"
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
           fill="currentColor"

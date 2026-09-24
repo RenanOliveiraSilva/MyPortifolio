@@ -117,7 +117,7 @@ function DottedConnector() {
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-cream overflow-hidden">
+    <section id="services" className="relative bg-[#EFECFD] overflow-hidden">
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-20 py-16 lg:py-24">
         {/* Two-column layout */}
@@ -158,7 +158,7 @@ export default function Services() {
                   </div>
 
                   {/* Arrow */}
-                  <ArrowRight className="w-4 h-4 shrink-0 text-muted-foreground/40 mt-0.5 transition-all duration-300 group-hover:text-royal group-hover:translate-x-1" />
+                  {/* <ArrowRight className="w-4 h-4 shrink-0 text-muted-foreground/40 mt-0.5 transition-all duration-300 group-hover:text-royal group-hover:translate-x-1" /> */}
                 </div>
               ))}
             </div>
