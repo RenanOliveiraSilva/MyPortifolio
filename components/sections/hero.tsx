@@ -199,20 +199,18 @@ function BlueDoodleLines() {
 function ContactCard() {
   const contacts = [
     {
-      icon: <MapPin className="w-4 h-4 text-coral" />,
+      icon: <MapPin className="w-4 h-4 text-coral shrink-0" />,
       text: "São Paulo, Brasil",
     },
     {
-      icon: <Mail className="w-4 h-4 text-royal" />,
-      text: "renan.oliveira@email.com",
+      icon: <Mail className="w-4 h-4 text-royal shrink-0" />,
+      text: "renandeoliveirasilva123@email.com",
+      href: "mailto:renandeoliveirasilva123@email.com",
     },
     {
-      icon: <Globe className="w-4 h-4 text-royal" />,
-      text: "renanoliveira.dev",
-    },
-    {
-      icon: <Link2 className="w-4 h-4 text-royal" />,
-      text: "linkedin.com/in/renan-oliveira",
+      icon: <Link2 className="w-4 h-4 text-royal shrink-0" />,
+      text: "linkedin.com/in/renan-silva",
+      href: "https://www.linkedin.com/in/renan-de-oliveira-silva-416721289/",
     },
   ];
 
@@ -227,9 +225,20 @@ function ContactCard() {
       {/* Contact items */}
       <ul className="space-y-2.5">
         {contacts.map((item, i) => (
-          <li key={i} className="flex items-center gap-2.5">
+          <li key={i} className="flex items-center gap-2.5 min-w-0">
             {item.icon}
-            <span className="text-sm text-muted-foreground">{item.text}</span>
+            {item.href ? (
+              <a
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="text-sm text-muted-foreground hover:text-royal hover:underline transition-colors truncate"
+              >
+                {item.text}
+              </a>
+            ) : (
+              <span className="text-sm text-muted-foreground truncate">{item.text}</span>
+            )}
           </li>
         ))}
       </ul>
@@ -239,7 +248,7 @@ function ContactCard() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 lg:px-12 xl:px-20">
+    <section className="relative overflow-hidden px-6 lg:px-12 xl:px-20 pb-8 lg:pb-12">
       {/* ──── Main Grid ──── */}
       <div
         className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] gap-8 items-center min-h-[calc(100vh-72px)] py-12 lg:py-0 max-w-7xl mx-auto"
@@ -352,7 +361,7 @@ export default function Hero() {
           </div>
 
           {/* Description */}
-          <p className="text-base lg:text-lg text-foreground font-medium mt-8 max-w-md leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-foreground/80 leading-relaxed max-w-2xl font-normal">
             I build digital products that are
             <br className="hidden sm:block" />
             fast, scalable and thoughtfully designed.
